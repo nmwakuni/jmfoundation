@@ -1,10 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Heart, Users, Globe, TreePine, Droplets, GraduationCap, ArrowRight, Menu } from "lucide-react"
+import { Users, Globe, TreePine, Droplets, GraduationCap, ArrowRight, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useState } from "react"
+import Navigation from "@/components/Navigation"
+import Footer from "@/components/Footer"
+import Image from "next/image"
+import Link from "next/link"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -21,38 +24,9 @@ const staggerContainer = {
 }
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <Heart className="w-8 h-8 text-primary fill-primary" />
-              <span className="text-xl font-bold text-gray-900">Hope Foundation</span>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#mission" className="text-gray-700 hover:text-primary transition-colors">Mission</a>
-              <a href="#impact" className="text-gray-700 hover:text-primary transition-colors">Impact</a>
-              <a href="#programs" className="text-gray-700 hover:text-primary transition-colors">Programs</a>
-              <a href="#contact" className="text-gray-700 hover:text-primary transition-colors">Contact</a>
-              <Button size="sm">Donate Now</Button>
-            </div>
-
-            <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <Menu className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </motion.nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -136,42 +110,31 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="relative"
             >
-              <div className="relative h-[600px] rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-3xl" />
-                <motion.div
-                  animate={{
-                    y: [0, -20, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute top-10 left-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl"
-                />
-                <motion.div
-                  animate={{
-                    y: [0, 20, 0],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute bottom-10 right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-8">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                      className="inline-block"
-                    >
-                      <Heart className="w-32 h-32 text-primary" />
-                    </motion.div>
-                    <div className="text-2xl font-semibold text-gray-700">
-                      Building Hope Together
-                    </div>
+              <div className="grid grid-cols-2 gap-4 h-[600px]">
+                <div className="relative rounded-2xl overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=800&fit=crop"
+                    alt="Children learning"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <div className="relative rounded-2xl overflow-hidden h-[280px]">
+                    <Image
+                      src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&h=400&fit=crop"
+                      alt="Community gathering"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative rounded-2xl overflow-hidden h-[280px]">
+                    <Image
+                      src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&h=400&fit=crop"
+                      alt="Healthcare worker"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -420,52 +383,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Heart className="w-6 h-6 text-primary fill-primary" />
-                <span className="text-xl font-bold text-white">Hope Foundation</span>
-              </div>
-              <p className="text-sm">
-                Creating positive change in communities worldwide since 2010.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Our Work</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Get Involved</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">News</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-4">Programs</h3>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary transition-colors">Education</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Healthcare</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Environment</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Water & Sanitation</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2 text-sm">
-                <li>info@hopefoundation.org</li>
-                <li>+1 (555) 123-4567</li>
-                <li>123 Hope Street</li>
-                <li>New York, NY 10001</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-sm">
-            <p>&copy; 2024 Hope Foundation. All rights reserved. Built with ❤️ for a better tomorrow.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
