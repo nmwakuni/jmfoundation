@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function WaterSanitation() {
   return (
@@ -290,13 +291,17 @@ export default function WaterSanitation() {
               for generations to come.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Fund a Well
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Learn About Our Projects
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="group">
+                  Fund a Well
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/our-work">
+                <Button size="lg" variant="outline">
+                  Learn About Our Projects
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

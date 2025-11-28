@@ -330,13 +330,17 @@ export default function OurWork() {
               Your support makes these projects possible. Join us in creating positive change.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Support Our Projects
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                <Link href="/blog">Read More Stories</Link>
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="group">
+                  Support Our Projects
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/blog">
+                <Button size="lg" variant="outline">
+                  Read More Stories
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
