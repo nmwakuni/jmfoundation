@@ -145,103 +145,55 @@ export default function Home() {
 
       {/* Our Mission Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-white to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-4">
-                Our Mission
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-4">
+              Our Mission
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Breaking the Cycle of Poverty Through Sustainable Solutions
+            </h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Since 2010, Hope Foundation has been committed to creating lasting change in
+              underserved communities worldwide. We believe that access to quality education,
+              healthcare, and clean water are fundamental human rights, not privileges.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Our approach is community-driven and sustainable. We work alongside local
+              partners to design solutions that address root causes, not just symptoms.
+              Every project is built to last, empowering communities to maintain and grow
+              their progress long after we've moved on.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-8 h-8 text-primary" />
+                </div>
+                <div className="font-semibold text-gray-900 mb-1">Community-Led</div>
+                <p className="text-sm text-gray-600">Local voices guide our work</p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Breaking the Cycle of Poverty Through Sustainable Solutions
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Since 2010, Hope Foundation has been committed to creating lasting change in
-                underserved communities worldwide. We believe that access to quality education,
-                healthcare, and clean water are fundamental human rights, not privileges.
-              </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Our approach is community-driven and sustainable. We work alongside local
-                partners to design solutions that address root causes, not just symptoms.
-                Every project is built to last, empowering communities to maintain and grow
-                their progress long after we've moved on.
-              </p>
-              <div className="grid grid-cols-3 gap-6 pt-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Users className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="font-semibold text-gray-900 mb-1">Community-Led</div>
-                  <p className="text-sm text-gray-600">Local voices guide our work</p>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Globe className="w-8 h-8 text-primary" />
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Globe className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="font-semibold text-gray-900 mb-1">Sustainable</div>
-                  <p className="text-sm text-gray-600">Built to last generations</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <Heart className="w-8 h-8 text-primary fill-primary" />
-                  </div>
-                  <div className="font-semibold text-gray-900 mb-1">Transparent</div>
-                  <p className="text-sm text-gray-600">Every dollar tracked</p>
-                </div>
+                <div className="font-semibold text-gray-900 mb-1">Sustainable</div>
+                <p className="text-sm text-gray-600">Built to last generations</p>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="relative h-64 rounded-2xl overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=500&fit=crop"
-                      alt="Children learning"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative h-48 rounded-2xl overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop"
-                      alt="Community work"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Heart className="w-8 h-8 text-primary fill-primary" />
                 </div>
-                <div className="space-y-4 pt-12">
-                  <div className="relative h-48 rounded-2xl overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&h=300&fit=crop"
-                      alt="Healthcare"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative h-64 rounded-2xl overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=400&h=500&fit=crop"
-                      alt="Community gathering"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
+                <div className="font-semibold text-gray-900 mb-1">Transparent</div>
+                <p className="text-sm text-gray-600">Every dollar tracked</p>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
