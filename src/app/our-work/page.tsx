@@ -173,18 +173,16 @@ export default function OurWork() {
                   <CardHeader>
                     <div className="text-xs text-primary font-semibold mb-2">{project.category}</div>
                     <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <CardDescription>
-                      <div className="flex items-center gap-2 mt-2 text-sm">
-                        <MapPin className="w-4 h-4" />
-                        {project.location}
-                      </div>
-                      <div className="flex items-center gap-2 mt-1 text-sm">
-                        <Calendar className="w-4 h-4" />
-                        {project.date}
-                      </div>
-                    </CardDescription>
                   </CardHeader>
                   <CardContent>
+                    <div className="flex items-center gap-2 mb-2 text-sm text-gray-600">
+                      <MapPin className="w-4 h-4" />
+                      {project.location}
+                    </div>
+                    <div className="flex items-center gap-2 mb-4 text-sm text-gray-600">
+                      <Calendar className="w-4 h-4" />
+                      {project.date}
+                    </div>
                     <p className="text-gray-600 mb-4 text-sm">
                       {project.description}
                     </p>
