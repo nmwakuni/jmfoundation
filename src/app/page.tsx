@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bento Grid Section */}
+      {/* Our Focus Areas Section - Redesigned */}
       <section id="programs" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -157,148 +157,156 @@ export default function Home() {
               Our Focus Areas
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We work across multiple domains to create lasting impact in communities worldwide
+              Three core pillars driving sustainable change in communities worldwide
             </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"
-          >
-            {/* Large featured card */}
-            <motion.div variants={fadeInUp} className="md:col-span-2 lg:row-span-2">
-              <Card className="h-full bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 hover:shadow-xl transition-all duration-300 group cursor-pointer overflow-hidden">
-                <CardHeader className="pb-4">
-                  <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <GraduationCap className="w-8 h-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-3xl">Education for All</CardTitle>
-                  <CardDescription className="text-base">
-                    Empowering the next generation through quality education
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-6">
-                    We've established 200+ schools and learning centers, providing education to over
-                    50,000 children in underserved communities. Our holistic approach includes
-                    teacher training, digital literacy programs, and scholarship opportunities.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 mt-6">
-                    <div className="bg-white/50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-primary">50K+</div>
-                      <div className="text-sm text-gray-600">Students</div>
-                    </div>
-                    <div className="bg-white/50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-primary">200+</div>
-                      <div className="text-sm text-gray-600">Schools</div>
+          {/* Main Program Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+            >
+              <Link href="/education">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 group cursor-pointer border-primary/20 overflow-hidden">
+                  <div className="relative h-64">
+                    <Image
+                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
+                      alt="Education"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-3">
+                        <GraduationCap className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-1">Education</h3>
+                      <p className="text-white/90 text-sm">Building futures through learning</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Smaller cards */}
-            <motion.div variants={fadeInUp}>
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border-blue-200 bg-gradient-to-br from-blue-50 to-white">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Droplets className="w-7 h-7 text-blue-600" />
-                  </div>
-                  <CardTitle className="text-xl">Clean Water</CardTitle>
-                  <CardDescription>
-                    Providing access to safe drinking water
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold text-blue-600">1M+</div>
-                  <div className="text-sm text-gray-600">People Served</div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border-green-200 bg-gradient-to-br from-green-50 to-white">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <TreePine className="w-7 h-7 text-green-600" />
-                  </div>
-                  <CardTitle className="text-xl">Reforestation</CardTitle>
-                  <CardDescription>
-                    Fighting climate change one tree at a time
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold text-green-600">2.5M</div>
-                  <div className="text-sm text-gray-600">Trees Planted</div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border-purple-200 bg-gradient-to-br from-purple-50 to-white">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Heart className="w-7 h-7 text-purple-600" />
-                  </div>
-                  <CardTitle className="text-xl">Healthcare</CardTitle>
-                  <CardDescription>
-                    Ensuring health and wellbeing for all
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold text-purple-600">500K+</div>
-                  <div className="text-sm text-gray-600">Treatments</div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="md:col-span-2">
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border-orange-200 bg-gradient-to-br from-orange-50 to-white">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Globe className="w-7 h-7 text-orange-600" />
-                  </div>
-                  <CardTitle className="text-2xl">Global Partnerships</CardTitle>
-                  <CardDescription>
-                    Collaborating with organizations worldwide to maximize our impact
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex gap-8">
-                    <div>
-                      <div className="text-3xl font-bold text-orange-600">150+</div>
-                      <div className="text-sm text-gray-600">Partner Organizations</div>
+                  <CardContent className="pt-6">
+                    <p className="text-gray-600 mb-4">
+                      Empowering the next generation through quality education, teacher training,
+                      and digital literacy programs.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="bg-primary/5 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-primary">50K+</div>
+                        <div className="text-xs text-gray-600">Students</div>
+                      </div>
+                      <div className="bg-primary/5 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-primary">200+</div>
+                        <div className="text-xs text-gray-600">Schools</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-3xl font-bold text-orange-600">45</div>
-                      <div className="text-sm text-gray-600">Countries</div>
+                    <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                      Learn More
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              <Link href="/healthcare">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 group cursor-pointer border-purple-200 overflow-hidden">
+                  <div className="relative h-64">
+                    <Image
+                      src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&h=400&fit=crop"
+                      alt="Healthcare"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-3">
+                        <Heart className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-1">Healthcare</h3>
+                      <p className="text-white/90 text-sm">Healing communities, saving lives</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="pt-6">
+                    <p className="text-gray-600 mb-4">
+                      Providing accessible healthcare services, mobile clinics, and maternal care
+                      to underserved populations.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="bg-purple-50 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-purple-600">500K+</div>
+                        <div className="text-xs text-gray-600">Treatments</div>
+                      </div>
+                      <div className="bg-purple-50 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-purple-600">80+</div>
+                        <div className="text-xs text-gray-600">Clinics</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center text-purple-600 font-semibold group-hover:gap-2 transition-all">
+                      Learn More
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
 
-            <motion.div variants={fadeInUp}>
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border-pink-200 bg-gradient-to-br from-pink-50 to-white">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Users className="w-7 h-7 text-pink-600" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <Link href="/water-sanitation">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 group cursor-pointer border-blue-200 overflow-hidden">
+                  <div className="relative h-64">
+                    <Image
+                      src="https://images.unsplash.com/photo-1541844053589-346841d0b34c?w=600&h=400&fit=crop"
+                      alt="Water & Sanitation"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-3">
+                        <Droplets className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-1">Water & Sanitation</h3>
+                      <p className="text-white/90 text-sm">Every drop matters</p>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl">Community</CardTitle>
-                  <CardDescription>
-                    Building stronger, resilient communities
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-3xl font-bold text-pink-600">10K+</div>
-                  <div className="text-sm text-gray-600">Volunteers</div>
-                </CardContent>
-              </Card>
+                  <CardContent className="pt-6">
+                    <p className="text-gray-600 mb-4">
+                      Providing clean water access and sanitation facilities to prevent disease
+                      and improve quality of life.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="bg-blue-50 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-blue-600">1M+</div>
+                        <div className="text-xs text-gray-600">People Served</div>
+                      </div>
+                      <div className="bg-blue-50 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-blue-600">350+</div>
+                        <div className="text-xs text-gray-600">Wells Built</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                      Learn More
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -371,13 +379,17 @@ export default function Home() {
               to create a better world for everyone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Donate Now
-                <Heart className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Become a Volunteer
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="group">
+                  Donate Now
+                  <Heart className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline">
+                  Become a Volunteer
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

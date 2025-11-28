@@ -39,7 +39,10 @@ export default function Navigation() {
                 </div>
               </div>
               <Link href="/blog" className="text-gray-700 hover:text-primary transition-colors">Blog</Link>
-              <Button size="sm">Donate Now</Button>
+              <Link href="/contact" className="text-gray-700 hover:text-primary transition-colors">Contact</Link>
+              <Link href="/contact">
+                <Button size="sm">Donate Now</Button>
+              </Link>
             </div>
 
             <button
@@ -71,7 +74,10 @@ export default function Navigation() {
               <Link href="/water-sanitation" className="block py-2 text-gray-700 hover:text-primary transition-colors">Water & Sanitation</Link>
             </div>
             <Link href="/blog" className="block py-2 text-gray-700 hover:text-primary transition-colors">Blog</Link>
-            <Button size="sm" className="w-full">Donate Now</Button>
+            <Link href="/contact" className="block py-2 text-gray-700 hover:text-primary transition-colors">Contact</Link>
+            <Link href="/contact">
+              <Button size="sm" className="w-full">Donate Now</Button>
+            </Link>
           </div>
         </motion.div>
       )}

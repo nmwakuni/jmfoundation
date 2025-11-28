@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Education() {
   return (
@@ -302,13 +303,17 @@ export default function Education() {
               they need to build a brighter future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Sponsor a Child
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Volunteer as a Teacher
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="group">
+                  Sponsor a Child
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline">
+                  Volunteer as a Teacher
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
